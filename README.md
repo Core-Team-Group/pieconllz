@@ -96,24 +96,18 @@ private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
     Toast.makeText(getApplicationContext(), "" + credential, Toast.LENGTH_LONG).show();
     //mAuth = FirebaseAuth.getInstance();
     mAuth.signInWithCredential(credential)
-            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {@Overridepublic void onComplete(@NonNull Task<AuthResult> task) {
                     Toast.makeText(getApplicationContext(), "" + task.isSuccessful(), Toast.LENGTH_LONG).show();
-                    if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
-                        //Log.d(TAG, "signInWithCredential:success");
-                        //FirebaseUser user = mAuth.getCurrentUser();
-                        //Log.i("Test:", " Compiled ?");
-                        //startActivity(new Intent(login.this, MainActivity.class));
+if (task.isSuccessful()) {// Sign in success, update UI with the signed-in user's information//Log.d(TAG, "signInWithCredential:success");
+ //FirebaseUser user = mAuth.getCurrentUser();
+//Log.i("Test:", " Compiled ?");
+ //startActivity(new Intent(login.this, MainActivity.class));
                         Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(login.this, MainActivity.class));
-                        //updateUI(user);
-                    } else {
+                        startActivity(new Intent(login.this, MainActivity.class)); //updateUI(user);
+} else {
                         Toast.makeText(getApplicationContext(), "Not Success", Toast.LENGTH_LONG).show();
 
-
-                        //Log.w(TAG, "signInWithCredential:failure", task.getException());
+ //Log.w(TAG, "signInWithCredential:failure", task.getException());
                         //Snackbar.make(findViewById(R.id.main_layout), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                         //updateUI(null);
                     }
