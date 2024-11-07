@@ -109,13 +109,14 @@ if (task.isSuccessful()) {// Sign in success, update UI with the signed-in user'
 
  //Log.w(TAG, "signInWithCredential:failure", task.getException());
                         //Snackbar.make(findViewById(R.id.main_layout), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
-                        //updateUI(null);
-                    }
-
-                    // ...
-                }
-            });
-
-    // Toast.makeText(getApplicationContext(), ""+acct, Toast.LENGTH_LONG).show();
+updateUI(null);
+}
+// ...
+   }
+ });
+ // Toast.makeText(getApplicationContext(), ""+acct, Toast.LENGTH_LONG).show();
 
 }startActivity(new Intent(login.this, MainActivity.class));
+  if (task.isSuccessful()) {  
+          //Start The activity from here
+          }
